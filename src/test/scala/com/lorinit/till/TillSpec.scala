@@ -1,8 +1,10 @@
 package com.lorinit.till
 
 import com.lorinit.till.Item.{Apple, Orange}
-import org.scalatest.{BeforeAndAfter, FlatSpec, Matchers}
+import org.scalatest.{BeforeAndAfter, FlatSpec, Ignore, Matchers}
 
+@Ignore
+@Deprecated  // in favor of TillPropSpec due to nature of feature is repetitive
 class TillSpec extends FlatSpec with Matchers with BeforeAndAfter  {
 
   var till: Till = _
