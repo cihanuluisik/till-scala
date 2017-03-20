@@ -9,7 +9,7 @@ class TillWithOfferPropSpec extends PropSpec with TableDrivenPropertyChecks with
   var tillWithOffer: TillWithOffer = _
 
   before {
-    tillWithOffer = TillWithOffer(Map(
+    tillWithOffer = new TillWithOffer(Map(
                                         Apple -> Offer(2, 60),
                                         Orange -> Offer(3, 25)))
   }
@@ -20,11 +20,11 @@ class TillWithOfferPropSpec extends PropSpec with TableDrivenPropertyChecks with
                           (List(Kiwi),                                                20), // an item without offer
                           (List(Orange),                                              25),
                           (List(Apple),                                               60),
-                          (List(Apple, Apple),                                        60),
+                          (List(Apple, Apple),                                        60), // first discounted list
                           (List(Orange, Orange),                                      50),
                           (List(Orange, Orange, Orange),                              50),
                           (List(Orange, Orange, Orange, Apple, Apple, Apple),         170),
-                          (List(Orange, Orange, Apple, Orange, Apple, Apple),         170) )
+                          (List(Orange, Orange, Apple, Orange, Apple, Apple),         170) ) // unordered list
 
   property("Calculating total price for shopping list with possible offers") {
     forAll(testCases)   { (list, total) => tillWithOffer.calculate(list) should be (total) }

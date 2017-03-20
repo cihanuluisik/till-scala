@@ -2,7 +2,7 @@ package com.lorinit.till
 
 case class Offer(threshold: Int, discountAmount: Int)
 
-case class TillWithOffer(offers: Map[Item, Offer]) extends Till {
+class TillWithOffer(offers: Map[Item, Offer]) extends Till {
 
   override def calculate(shoppingList: List[Item]) = {
     super.calculate(shoppingList) - calculateDiscount(shoppingList)
