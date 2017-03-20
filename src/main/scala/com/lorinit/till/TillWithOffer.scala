@@ -4,8 +4,8 @@ case class Offer(threshold: Int, discountAmount: Int)
 
 case class TillWithOffer(offers: Map[Item, Offer]) extends Till {
 
-  override def calculate(list: List[Item]) = {
-    super.calculate(list) - calculateDiscount(list)
+  override def calculate(shoppingList: List[Item]) = {
+    super.calculate(shoppingList) - calculateDiscount(shoppingList)
   }
 
   private def calculateDiscount(list: List[Item]): Int = {

@@ -3,7 +3,7 @@ package com.lorinit.till
 case class Item(name: String, price: Int)
 
 object Item {
-  def Orange: Item = Item("orange", 25)
-  def Apple: Item = Item("apple", 60)
-  def Kiwi: Item = Item("kiwi", 20)
+  val Orange: Item = Item("orange", 25)
+  val Apple: Item = Item("apple", 60)
+  val Kiwi: Item = Item("kiwi", 20)
 }
