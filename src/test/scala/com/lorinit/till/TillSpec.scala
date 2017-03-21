@@ -4,14 +4,21 @@ import com.lorinit.till.Item.{Apple, Orange}
 import org.scalatest.{BeforeAndAfter, FlatSpec, Ignore, Matchers}
 
 @Ignore
-@Deprecated  // in favor of TillPropSpec due to nature of feature is repetitive
-class TillSpec extends FlatSpec with Matchers with BeforeAndAfter  {
+@Deprecated // in favor of TillPropSpec due to nature of feature is repetitive
+class TillSpec extends FlatSpec with Matchers with BeforeAndAfter {
 
   var till: Till = _
 
   before {
-    till = new Till()
+    till = new Till(
+      {
+        case Apple => 60
+        case Orange => 25
+      },
+      (item: Item) => Offer(1000000,0) // default offer.. to be agreed
+      )
   }
+
 
   "Till" should " calculate to 0 given nothing" in {
     val total = till.calculate(Nil)
