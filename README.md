@@ -7,4 +7,7 @@
         as requested
 
 * step 3
-        improvements towards more functional and readability
+        improvements towards more functional
+
+* step 4
+        best of both worlds to make it more readable

@@ -10,15 +10,15 @@ class TillWithOfferPropSpec extends PropSpec with TableDrivenPropertyChecks with
 
   before {
     tillWithOffer = new Till(
-      {
-        case Apple  => 60
-        case Orange => 25
-        case _      => 0    // default value to be agreed with business
-      }, {
-        case Apple  => Offer(2, 60)           // for two apple 60 discount
-        case Orange => Offer(3, 25)           // for three oranges 25 discount
-        case _      => Offer(10000000, 0)     // default .. no offer even for ten millions item
-      })
+      PriceList(
+        Apple  -> 60,
+        Orange -> 25
+      ),
+      OfferList(
+        Apple -> Offer(2, 60), // for two apple 60 discount
+        Orange -> Offer(3, 25) // for three oranges 25 discount
+      )
+    )
   }
 
   val testCases = Table( ("list",                                                    "total"),
