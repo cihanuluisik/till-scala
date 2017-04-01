@@ -10,12 +10,12 @@ class TillPropSpec extends PropSpec with TableDrivenPropertyChecks with Matchers
 
   before {
     till = new Till(
-    {
-      case Apple  => 60
-      case Orange => 25
-      case _      => 0    // default.. to be agreed with customer!
-    },
-      (item: Item) => Offer(1000000,0) // default offer.. to be agreed
+      {
+        case Apple  => 60
+        case Orange => 25
+        case _      => 0    // default.. to be agreed with customer!
+      },
+      (item: Item) => Offer(1000000,0) // no offer for any product
     )
 
   }
