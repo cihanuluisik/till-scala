@@ -1,13 +1,13 @@
 # till-scala
 
-* step 1
-        as requested
+* **Step 1**
+        <br/> As requested
 
-* step 2
-        as requested
+* **Step 2**
+        <br/> As requested
 
-* step 3 - Optional
-        improvements towards more functional
+* **Step 3 - Optional**
+        <br/>Code improved towards more functional
 
-* step 4 - Optional
-        best of both worlds - OO  and functional towards readability
+* **Step 4 - Optional**
+        <br/>Code improved more. Best of both worlds - OO  and functional towards readability
