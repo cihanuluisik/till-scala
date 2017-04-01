@@ -13,7 +13,7 @@ class Till(prices: PriceList) {
   private def calculate(acc: mutable.Map[Item, Int], list: List[Item]): Int = list match {
     case Nil if acc.isEmpty => 0
     case item :: tail =>  acc.put(item, acc.getOrElseUpdate(item, 0) + 1); calculate(acc, tail)
-    case Nil => (for ((item, count) <- acc ) yield priceTotal(item, count) - discountTotal(item, count)).sum
+    case Nil          => (for ((item, count) <- acc ) yield priceTotal(item, count) - discountTotal(item, count)).sum
   }
 
   private def priceTotal(item: Item, count: Int)     =  prices.price(item) * count
