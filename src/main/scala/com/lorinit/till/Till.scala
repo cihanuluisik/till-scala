@@ -19,11 +19,11 @@ class Till(prices: PriceList) {
   private def priceTotal(item: Item, count: Int)     =  prices.price(item) * count
   private def discountTotal(item: Item, count: Int)  =  count / offers.offer(item).threshold * offers.offer(item).discountAmount
 
-  def withOfferList(offerTuples:(Item,Offer)*)       =  {offers = OfferList(offerTuples:_*); this}
+  def withOffers(offerTuples:(Item,Offer)*)       =  {offers = OfferList(offerTuples:_*); this}
 
 }
 
 
 object Till {
-  def withPriceList(priceTuples: (Item,Int)* )        =  new Till(new PriceList(priceTuples:_*))
+  def withPrices(priceTuples: (Item,Int)* )        =  new Till(new PriceList(priceTuples:_*))
 }

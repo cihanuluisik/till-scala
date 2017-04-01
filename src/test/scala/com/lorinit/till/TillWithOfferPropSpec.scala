@@ -6,7 +6,7 @@ import org.scalatest.{BeforeAndAfter, Matchers, PropSpec}
 
 class TillWithOfferPropSpec extends PropSpec with TableDrivenPropertyChecks with Matchers with BeforeAndAfter {
 
-  var tillWithOffer = Till withPriceList  (Apple -> 60, Orange -> 25)   withOfferList  ( Apple -> Offer(2, 60),  Orange -> Offer(3, 25))
+  var tillWithOffer = Till withPrices  (Apple -> 60, Orange -> 25)   withOffers  ( Apple -> Offer(2, 60),  Orange -> Offer(3, 25))
 
   val testCases = Table( ("list",                                                    "total"),
                           (Nil,                                                       0),

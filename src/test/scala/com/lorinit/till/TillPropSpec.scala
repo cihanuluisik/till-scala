@@ -6,7 +6,7 @@ import org.scalatest.prop._
 
 class TillPropSpec extends PropSpec with TableDrivenPropertyChecks with Matchers with BeforeAndAfter {
 
-  var till  = Till withPriceList (Apple -> 60, Orange -> 25)
+  var till  = Till withPrices (Apple -> 60, Orange -> 25)
 
   val testCases = Table( ("list",                                "total"),
                           (Nil,                                   0),
