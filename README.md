@@ -10,4 +10,4 @@
         improvements towards more functional
 
 * step 4
-        best of both worlds to make it more readable
+        best of both worlds - OO  and functional towards readability
